@@ -12,8 +12,8 @@ uses: actions/checkout@v3
 uses: docker/login-action@v2
 with:
 registry: ghcr.io
-username: ${{ Jfranco2023 }}
-password: ${{ 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 }}
+username: ${{ github.actor }}
+password: ${{ secrets.GHCR_TOKEN }}
 - name: Construir imagen
 run: docker build -t ghcr.io/${{ github.repository_owner }}/lab-docker-web:latest .
 - name: Publicar imagen en GHCR
